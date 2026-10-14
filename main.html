@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>2D Fluid Simulation</title>
+</head>
+<body>
+    <canvas id="fluidCanvas" class="fluid-canvas" width="1200" height="720">
+
+    </canvas>
+    <script type="module">
+        import { Main } from './Main.js';
+        const main = new Main('fluidCanvas', '#000000');
+        main.start();
+    </script>
+</body>
+</html>
