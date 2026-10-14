@@ -7,15 +7,16 @@ export class Simulation {
 
     constructor(boundary = { width: 800, height: 600 }) {
 
-        this.AMOUNT_OF_PARTICLES = 1000;
+        this.AMOUNT_OF_PARTICLES = 3000;
         this.VELOCITY_DAMPING = 1;
         this.GRAVITY = new Vector2(0, 100);
         this.K_NEAR = 4;
         this.K = 0.1;
-        this.INTERACTION_RADIUS = 25;
+        this.PARTICLE_RADIUS = 3;
+        this.INTERACTION_RADIUS = this.PARTICLE_RADIUS * 5;
         this.REST_DENSITY = 10;
-        this.MAX_RELAXATION_SPEED = 100;
-        this.COEFFICIENT_OF_RESTITUTION = 0.01;
+        this.MAX_RELAXATION_SPEED = 50;
+        this.COEFFICIENT_OF_RESTITUTION = 0;
 
         this.particles = [];
         this.neighbourCells = [];
@@ -26,9 +27,9 @@ export class Simulation {
     }
 
     initializeParticles() {
-        const particleRadius = 5;
+        const particleRadius = this.PARTICLE_RADIUS;
         const particleMass = 1;
-        const spacing = particleRadius * 2 + 1;
+        const spacing = this.INTERACTION_RADIUS * 0.5;
         const offsetX = 10;
         const offsetY = 10;
         const availableWidth = this.boundary.width - offsetX * 2 - particleRadius * 2;
