@@ -18,14 +18,8 @@ export class Playground {
     }
 
     onMouseDown(pointer) {
-        const button = pointer.button;
-        const x = pointer.vector.x;
-        const y = pointer.vector.y;
     }
 
     onMouseUp(pointer) {
-        const button = pointer.button;
-        const x = pointer.vector.x;
-        const y = pointer.vector.y;
     }
 }
